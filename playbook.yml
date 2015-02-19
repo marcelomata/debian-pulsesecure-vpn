@@ -1,0 +1,20 @@
+#
+# Ansible Playbook that installs Pulse VPN client on Debian 64-bit, Kali
+#
+# Run with $ ansible-playbook -c local -i hosts  playbook.yml
+#
+---
+- hosts: all
+  remote_user: root
+  gather_facts: no
+  tasks:
+    - command: dpkg --add-architecture i386
+    - apt: update_cache=yes cache_valid_time=3600
+    - apt: name=libgtk2-perl
+    - apt: name=libwww-perl
+    - apt: name=libz1:i386 update_cache=yes
+    - apt: name=icedtea-plugin
+    - apt: name=libc6-i386
+    - get_url: url=https://raw.github.com/madscientist/msjnc/master/msjnc dest=/usr/local/bin/msjnc validate_certs=no
+    - file: path=/usr/local/bin/msjnc mode=755
+      tags: perm
