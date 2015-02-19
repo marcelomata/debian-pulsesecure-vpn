@@ -1,6 +1,6 @@
 ### Ansible workbook that installs Pulse SSL/VPN, Juniper SSL/VPN client on Debian 64-bit ###
 
-#### By: Christian Nygaard Game-Hosting GH AB ####
+#### Playbook by: Christian Nygaard Game-Hosting GH AB ####
 Url: http://www.game-hosting.com Managed services for game companies
 
 ###### Install ansible #######
@@ -16,3 +16,5 @@ http://vpn.yourdomain.com
 $ msjnc
 
 Done
+###### Credits: Thanks to Paul D. Smith for creating msjnc which this Ansible playbook uses ######
+
